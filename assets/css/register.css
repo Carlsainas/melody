@@ -1,0 +1,118 @@
+html, 
+body{
+	padding: 0;
+	margin: 0;
+	height: 100%;
+}
+
+#background{
+	background-color: #000;
+	background-image: url(../images/registerbg/rbg.jpg);
+	background-position: center;
+	background-size: cover;
+	display: table;
+	height: 100%;
+	width: 100%;
+}
+
+#loginContainer * { /*¦ * implements that all in loginContainer gets added values */
+	color: #e1e6ef;
+	font-family: 'lato', "Helvetica neue", "arial";
+    font-weight: normal;
+    line-height: 1em;
+    box-sizing: border-box;
+}
+
+#loginContainer{
+	width: 80%;
+	margin: 0 auto;
+	position: relative; /*relative to its parent*/
+	max-width: 1024px;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #ddd;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #ddd;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #ddd;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #ddd;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color:    #ddd;
+}
+
+::placeholder { /* Most modern browsers support this now. */
+   color:    #ddd;
+}
+
+#inputContainer{
+	width: 400px;
+	padding: 50px;
+	float: left;
+	border-right: 1px solid #9fa3a8;
+}
+
+#inputContainer h2, h4{
+	text-align: center;
+}
+h4{
+	margin-top: -15px;
+}
+
+#inputContainer input[type="text"],
+#inputContainer input[type="email"],
+#inputContainer input[type="password"] {
+	display: block;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid #939393;
+    height: 28px;
+    line-height: 25px;
+    width: 100%;
+    margin: 5px 0 5px;
+	padding: 8px 10px;
+	font-size: 20px;
+}
+
+#inputContainer label{
+	color: #898989;
+    font-size: 20px;
+    margin-top: 15px;
+    padding: 8px 10px;
+
+}
+
+#inputContainer button{
+	background: transparent;
+    border: 2px solid #00adee;
+    border-radius: 15px;
+    color: #e1e6ef;
+    display: block;
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin: 20px auto;
+    height: 40px;
+    width: 100%;
+    transition: .2s ease-in-out;
+}
+
+#inputContainer button:hover{
+	cursor: pointer;
+	transform: scale(1.03);
+}
+
+.hasAccount span{
+	font-weight: bold;
+	font-size: 13px;
+}
+
+.hasAccount{
+	text-align: center;
+}
