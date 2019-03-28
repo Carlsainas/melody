@@ -1,0 +1,409 @@
+html,
+body{
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	
+}
+
+* { /*To all atributes*/
+    font-family: "lato", sans-serif;
+    color: #fff;
+}
+
+body{
+    background-color: #181818;
+    font-size: 16px;
+    min-width: 720px;
+}
+
+#nowPlayingBarContainer{
+	width: 100%;
+ 	bottom: 0;
+    position: fixed;
+    min-width: 620px;
+    background-color: #150d0596;
+}
+
+#nowPlayingBar{
+	display: flex;
+    height: 90px;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+#nowPlayingLeft,
+#nowPlayingRight{
+	width: 30%;
+    min-width: 180px;
+}
+
+#nowPlayingCenter{
+	width: 40%;
+    max-width: 700px; /*when shrinked, -> wont go smaller that 700px*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#nowPlayingBar .content{
+	width: 100%;
+    height: 57px;
+}
+
+.buttons{
+	margin: 0 auto;
+    display: table;
+}
+
+.controlButton{
+	background-color: transparent;
+    border: none;
+    vertical-align: middle;
+}
+
+.controlButton img{
+    width: 33px;
+    height: 33px;
+}
+
+.controlButton.play img,
+.controlButton.pause img{
+    height: 50px;
+    width: 50px;
+}
+
+.controlButton:hover{
+    cursor: pointer;
+}
+
+.progressTime{
+    color: #f0ffc9;
+    font-size: 14px;
+    min-width: 40px;
+    text-align: center;
+}
+
+.playbackBar{
+    display: flex;
+}
+
+.progressBar{
+    width: 100%;
+    height: 12px;
+    display: inline-flex;
+    cursor: pointer;
+}
+
+.progressBarbg{
+    background-color: #a0a0a0;
+    height: 5px;
+    width: 100%;
+    border-radius: 3px;
+}
+.progress{
+    background-color: #e5ff60;
+    height: 5px;
+    width: 0;
+    border-radius: 4px;
+}
+
+.playbackBar .progressBar{
+    margin-top: 4px;
+
+}
+
+#nowPlayingLeft .albumArtwork{
+    height: 100%;
+    max-width: 57px;
+    margin-right: 15px;
+    width: 100%;
+    float: left; /*floats left with its text*/
+    background-size: cover;  /* scale image to largest size it can, makes sure whole space of image is coverd*/
+}
+
+#nowPlayingLeft .trackInfo{
+    display: table;
+    letter-spacing: 1px;
+}
+
+#nowPlayingLeft .trackInfo .trackName{
+    display: inline-block;
+    margin: 7px 0;
+    width: 100%;
+}
+
+#nowPlayingLeft .trackInfo .artistName span{
+    font-size: 13px;
+    color: #aaaaa9;
+ 
+}
+
+.volumeBar{
+    width: 175px;
+    position: absolute;
+    right: 0;
+}
+
+.volumeBar .progressBar{
+    width: 125px;
+}
+
+#nowPlayingRight{
+    position: relative;
+    margin-top: 15px;
+}
+
+
+#topContainer{
+    min-height: 100%;
+    width: 100%;
+}
+
+#navBarContainer{
+    background-color: #000;
+    width: 230px;
+    height: 100vh;  /* vh = view height*/
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#navBarContainer .navBar{
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    -ms-flex-direction: column;
+}
+
+.logo img{
+    height: 50px;
+    width: 50px;
+    border: 2px solid #e5ff60;
+    border-radius: 50%;
+}
+
+.logo{
+    margin-bottom: 7px;
+}
+
+.navBar .group{
+    border-top: 1px solid #a0a0a0;
+    padding: 10px 0;
+}
+
+.navItem{
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: 700;
+    display: block;
+    letter-spacing: 1px;
+    position: relative;  /* so that the search icon would take navItem as parent*/
+}
+
+.navItemLink{
+    color: #a0a0a0;
+    text-decoration: none;
+}
+
+.navItemLink .Icon{
+    position: absolute !important; /* positioned to it's parent */
+    right: 0; 
+    top: 6px;
+    width: 25px;
+}
+
+.navItemLink:hover{
+    color: #ffffff;
+}
+
+#mainViewContainer{
+    margin-left: 230px;
+    padding-bottom: 90px;
+    width: calc(100% - 230px); /*calc 100% value from left side container that has 230px width*/
+}
+
+#mainContent{
+    padding: 0 20px;
+}
+
+.pageHeadingBig{
+    padding: 20px;
+    text-align: center;
+}
+
+.gridViewContainer{
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.gridViewItem{
+    max-width: 260px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin: 1rem 0;
+    transition: .2s ease-in-out;
+}
+
+.gridViewItem:hover{
+    cursor: pointer;
+    transform:  scale(1.1);
+}
+
+.gridViewItem img{
+    background-color: #e5ff60;
+    border: 2px solid white;
+    width: 150px;
+    min-width: 150px;
+    padding: 30px;
+    margin: 20px;
+
+}
+
+.gridViewItem a{
+    text-decoration: none;
+}
+
+.gridViewInfo{
+    text-align: center;
+    margin-top: -10px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.entityInfo{
+    padding: 40px 0 40px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+}
+
+.entityInfo .leftSection{
+    width: 30%;
+    float: left;
+    max-width: 250px;
+}
+
+.leftSection img{
+    background-color: #e5ff60;
+    border: 2px solid white;
+    width: 150px;
+    min-width: 150px;
+    padding: 30px;
+    margin: 20px;
+}
+
+.entityInfo .rightSection{
+    width: 70%;
+    float: left;
+    padding: 5px 10px 10px 20px;
+    box-sizing: border-box;
+}
+
+.entityInfo .rightSection h2{
+    margin-top: 10px;
+}
+
+.entityInfo .rightSection p{
+    color: #939393;
+    font-weight: 200;
+}
+
+.tracklist{
+    padding: 0;
+}
+
+.tracklistRow{
+    height: 40px;
+    padding: 15px 10px;
+    list-style: none;
+}
+
+.tracklistRow span{
+    color: #939393;
+    font-weight: 200;
+}
+
+.tracklistRow:hover{
+    background-color: #282828;
+}
+
+.tracklistRow .trackCount{
+    width: 8%;
+    float: left;
+}
+
+.tracklistRow .trackCount img{
+    width: 21px;
+    visibility: hidden;
+    position: absolute;
+    cursor: pointer;
+}
+
+.tracklistRow:hover .trackCount img{ /* when tracklistRow is hovered over, play button appears*/
+    visibility: visible;
+}
+
+.tracklistRow.trackCount span{ 
+    visibility: visible;
+}
+
+.tracklistRow:hover .trackCount span{ 
+    visibility: hidden;
+}
+
+.tracklistRow .trackInfo{
+    width: 75%;
+    float: left;
+}
+
+.tracklistRow .trackInfo span{
+    display: block;
+}
+
+.tracklistRow .trackOptions{
+    width: 5%;
+    float: left;
+    text-align: right;
+}
+
+.tracklistRow .trackOptions img{
+    width: 22px;
+    visibility: hidden;
+}
+
+.tracklistRow:hover .trackOptions img{
+    visibility: visible;
+    padding-right: 10px;
+    margin-top: -2px;
+}
+
+.tracklistRow .trackDuration{
+    width: 12%;
+    float: left;
+    text-align: right;
+}
+
+.tracklistRow .trackInfo .trackName{
+    color: #fff;
+    margin-bottom: 7px;
+}
+
+/*.gridViewItem{
+    display: inline-block;
+    margin: 0 20px 10px 50px;
+    border: 2px solid white;
+    border-radius: 7px;
+    background-color: #e5ff60;
+    width: 150px;
+    height: 150px;
+    max-width: 150px;
+    max-width: 150px;
+    min-width: 100px;
+}
+
+.gridViewItem img{
+    width: 100%;
+}*/

@@ -1,30 +1,31 @@
+<?php include("includes/header.php"); ?>
+
+<h1 class="pageHeadingBig">Get better recommendations the more you listen</h1>
+<div class="gridViewContainer">
+	
 <?php 
-include("includes/config.php"); //because we needed session_start()
+$albumQuery = mysqli_query($connection, "SELECT * FROM albums ORDER BY RAND() LIMIT 5");
+while($row = mysqli_fetch_array($albumQuery)){
 
-/*session_destroy();*/
+	echo "<div class = 'gridViewItem'>
+		<a href = 'album.php?id= ". $row['id'] . "'>
+			<img src = '" . $row['artworkPath'] . "'>
 
-if(isset($_SESSION['userLoggedIn'])){
-	$userLoggedIn = $_SESSION['userLoggedIn'];
-}else{
-	header("Location: register.php");
+			<div class = 'gridViewInfo'>"
+			. $row['title'] .
+			"</div>
+		</a>
+	</div>";
+
+
 }
 
 ?>
-
-<!DOCTYPE html>
-<html lang="et">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
-    
-</head>
-<body>
-    
+	
+</div>
 
 
-    <script src="main.js"></script>
-</body>
-</html>
+<?php include("includes/footer.php"); ?>
+				
+
+		

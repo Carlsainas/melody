@@ -28,17 +28,36 @@
 
 </head>
 <body>
+<?php 
+if(isset($_POST['registerButton'])){ //if register button is pressed, we wont go over sign in
+	echo '<script>
+		$(document).ready(function(){
+			$("#loginForm").hide();
+			$("#registerForm").show();
+		});
+		</script>';
+		}
+		else
+		{	
+			echo '<script>
+		$(document).ready(function(){
+			$("#loginForm").show();
+			$("#registerForm").hide();
+		});
+		</script>';
+		}
 
+ ?>
 
 <div id="background">
 	<div id="loginContainer">
 		<div id="inputContainer">
 			<form id="loginForm" action="register.php" method="POST">
-				<h2>Log in to your account</h2>
+				<h2>Login to your account</h2>
 				<p>
 					<?php echo $account->getError(Constants::$loginFailed); ?>
 					<label for="loginUsername"></label>
-					<input type="text" id="loginUsername" name="loginUsername" placeholder="Your username" required>
+					<input type="text" id="loginUsername" name="loginUsername" placeholder="Your username" value = "<?php getInputValue('loginUsername') ?>" required>
 				</p>
 				<p>
 					<label for="loginPassword"></label>
@@ -106,8 +125,21 @@
 				</div>
 			</form>
 		</div>
+
+		<div id="loginText">
+			<h1>Listen great music, anywhere, anytime</h1>
+			<h2>Enjoy your best songs for free</h2>
+			<ul>
+				<li>Easy to use</li>
+				<li>Superior quality of sound</li>
+				<li>Create your own best playlist</li>
+			</ul>
+		</div>
+
 	</div>
 </div>
+
+
 
 </body>
 </html>

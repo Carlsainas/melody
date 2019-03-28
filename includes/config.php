@@ -5,7 +5,7 @@
 
 	$timezone = date_default_timezone_set("Europe/Tallinn");
 
-	$connection = mysqli_connect("localhost", "root", "", "clone"); //connect ¦server, username, password, sqldb name
+	$connection = mysqli_connect("localhost", "root", "", "clone"); //connect ¦server, username, password, sqldb name, connection to our database
 
 	if(mysqli_connect_errno()){
 		echo "Failed to connect: " . mysqli_connect_errno();
